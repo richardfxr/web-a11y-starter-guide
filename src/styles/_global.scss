@@ -1,0 +1,21 @@
+// Partial SCSS file containing global styling
+
+
+
+// === USE ====================================
+@use 'variables' as *;
+
+
+
+/* ============================================
+   GLOBAL
+   ============================================ */
+
+:global(body) {
+    background-color: var(--clr-100);
+}
+
+.region {
+    border-radius: var(--bradius-md);
+    background-color: var(--clr-50);
+}
