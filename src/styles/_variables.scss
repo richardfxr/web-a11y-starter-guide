@@ -1,15 +1,41 @@
-:global(:root) {
-    --max-width: calc(2 * var(--pad-edge) + var(--sidebar-width) + var(--gap-main) + 84rem); // page max width
+// Partial SCSS file containing variables
+
+
+
+// === USE ====================================
+@use 'colors' as *;
+
+
+/* ============================================
+   VARIABLES
+   ============================================ */
+
+// === BREAKPOINTS ============================
+$breakpoint-smdesktop: 1450px;
+$breakpoint-tablet: 1250px;
+$breakpoint-mobile: 650px;
+
+:root {
+    /* === CSS VARIABLES ====================== */
+    --max-width: calc(2 * var(--gap-sec) + var(--sidebar-width) + var(--gap-main) + 84rem); // page max width
     --content-width: calc(100% - ());
+    --bradius-md: 0.7rem;
 
     --sidebar-width: 20rem; // #sidebar (skipLinks and navBar) width
-    --sidebar-pad-centered: max(calc((100vw - var(--max-width)) / 2 + var(--pad-edge)), var(--pad-edge));
+    --sidebar-pad-centered: max(calc((100vw - var(--max-width)) / 2 + var(--gap-sec)), var(--gap-sec));
 
-    --pad-edge: 1.5rem; // page border padding
     --pad-md: 2rem; // medium padding
 
     --gap-main: 3rem; // main gap size (between regions)
-    --gap-inner: 3rem; // inner gap size (between elements within a region)
+    --gap-sec: calc(var(--gap-main) / 2); // page border padding
+    --gap-inner: calc(var(--gap-main) / 3); // inner gap size (between elements within a region)
 
-    --content-pad: 0 var(--pad-edge) 0 calc(var(--pad-edge) + var(--sidebar-width) + var(--gap-main));
+    --content-pad: 0 var(--gap-sec) 0 calc(var(--gap-sec) + var(--sidebar-width) + var(--gap-main));
+
+
+    /* === COLORS ============================= */
+    // parse $colors into CSS variables
+    @each $name, $value in $light {
+        --clr-#{$name}: #{$value};
+    }
 }
