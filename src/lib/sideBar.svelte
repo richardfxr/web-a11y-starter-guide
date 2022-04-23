@@ -18,13 +18,18 @@
         bottom: 0;
         left: 0;
         
+        /* sizing */
         width: var(--sidebar-width);
         height: 100vh;
+        padding: var(--gap-sec) 0;
 
         /* allow scroll if overflown */
         overflow: auto;
 
-        background-color: red;
+        /* flexbox */
+        display: flex;
+        flex-flow: column nowrap;
+        gap: var(--gap-sec);
     }
 
     // left center sidebar
@@ -46,14 +51,14 @@
     // left edge sidebar
     :global([data-sidebar-dir="left"][data-sidebar-pos="edge"]) {
         #sidebar {
-            margin: 0 auto 0 var(--pad-edge);
+            margin: 0 auto 0 var(--gap-sec);
         }
     }
 
     // right edge sidebar
     :global([data-sidebar-dir="right"][data-sidebar-pos="edge"]) {
         #sidebar {
-            margin: 0 var(--pad-edge) 0 auto;
+            margin: 0 var(--gap-sec) 0 auto;
         }
     }
 </style>
