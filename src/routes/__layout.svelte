@@ -22,7 +22,7 @@
     // left sidebar
     :global([data-sidebar-dir="left"]) {
         #main {
-            padding: var(--pad-edge) var(--pad-edge) var(--pad-edge) calc(var(--pad-edge) + var(--sidebar-width) + var(--gap-main));
+            padding: var(--gap-sec) var(--gap-sec) var(--gap-sec) calc(var(--gap-sec) + var(--sidebar-width) + var(--gap-main));
         }
     }
 </style>
