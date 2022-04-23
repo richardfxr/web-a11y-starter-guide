@@ -23,8 +23,14 @@ main, h1 {
 }
 
 .region {
+    padding: var(--gap-sm);
     border-radius: var(--bradius-md);
     background-color: var(--clr-50);
+
+    h2 {
+        font-size: 1.35rem;
+        font-weight: 500;
+    }
 }
 
 /* === TYPOGRAPHY ========================= */
@@ -36,13 +42,13 @@ h1 {
 // left sidebar
 :global([data-sidebar-dir="left"]) {
     main, h1 {
-        padding: var(--gap-sec) var(--gap-sec) var(--gap-sec) calc(var(--gap-sec) + var(--sidebar-width) + var(--gap-main));
+        padding: var(--gap-md) var(--gap-md) var(--gap-md) calc(var(--gap-md) + var(--sidebar-width) + var(--gap-lg));
     }
 }
 
 // right sidebar
 :global([data-sidebar-dir="right"]) {
     main, h1 {
-        padding: var(--gap-sec) calc(var(--gap-sec) + var(--sidebar-width) + var(--gap-main)) var(--gap-sec) var(--gap-sec);
+        padding: var(--gap-md) calc(var(--gap-md) + var(--sidebar-width) + var(--gap-lg)) var(--gap-md) var(--gap-md);
     }
 }
