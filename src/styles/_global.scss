@@ -15,7 +15,20 @@
     background-color: var(--clr-100);
 }
 
+main, h1 {
+    max-width: var(--max-width);
+    width: 100%;
+    margin: 0 auto;
+}
+
 .region {
     border-radius: var(--bradius-md);
     background-color: var(--clr-50);
+}
+
+// left sidebar
+:global([data-sidebar-dir="left"]) {
+    main, h1 {
+        padding: var(--gap-sec) var(--gap-sec) var(--gap-sec) calc(var(--gap-sec) + var(--sidebar-width) + var(--gap-main));
+    }
 }
