@@ -17,20 +17,21 @@ $breakpoint-mobile: 650px;
 
 :root {
     /* === CSS VARIABLES ====================== */
-    --max-width: calc(2 * var(--gap-sec) + var(--sidebar-width) + var(--gap-main) + 84rem); // page max width
+    --max-width: calc(2 * var(--gap-md) + var(--sidebar-width) + var(--gap-lg) + 84rem); // page max width
     --content-width: calc(100% - ());
     --bradius-md: 0.7rem;
 
     --sidebar-width: 20rem; // #sidebar (skipLinks and navBar) width
-    --sidebar-pad-centered: max(calc((100vw - var(--max-width)) / 2 + var(--gap-sec)), var(--gap-sec));
+    --sidebar-pad-centered: max(calc((100vw - var(--max-width)) / 2 + var(--gap-md)), var(--gap-md));
 
     --pad-md: 2rem; // medium padding
 
-    --gap-main: 3rem; // main gap size (between regions)
-    --gap-sec: calc(var(--gap-main) / 2); // page border padding
-    --gap-inner: calc(var(--gap-main) / 3); // inner gap size (between elements within a region)
+    --gap-lg: 3rem; // main gap size (between regions)
+    --gap-md: calc(var(--gap-lg) / 2); // page border padding
+    --gap-sm: calc(var(--gap-lg) / 3); // region padding
+    --gap-xs: calc(var(--gap-lg) / 4); // inner gap size (between elements within a region)
 
-    --content-pad: 0 var(--gap-sec) 0 calc(var(--gap-sec) + var(--sidebar-width) + var(--gap-main));
+    --content-pad: 0 var(--gap-md) 0 calc(var(--gap-md) + var(--sidebar-width) + var(--gap-lg));
 
 
     /* === COLORS ============================= */
