@@ -12,6 +12,7 @@
    ============================================ */
 
 :global(body) {
+    font-family: 'Inter';
     background-color: var(--clr-100);
 }
 
@@ -25,6 +26,12 @@ main, h1 {
     border-radius: var(--bradius-md);
     background-color: var(--clr-50);
 }
+
+/* === TYPOGRAPHY ========================= */
+h1 {
+
+}
+
 
 // left sidebar
 :global([data-sidebar-dir="left"]) {
