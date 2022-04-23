@@ -1,14 +1,14 @@
 :global(:root) {
-    --max-width: 110rem; // page max width
+    --max-width: calc(2 * var(--pad-edge) + var(--sidebar-width) + var(--gap-main) + 84rem); // page max width
     --content-width: calc(100% - ());
 
-    --sidebar-width: 10rem; // #sidebar (skipLinks and navBar) width
-    --sidenav-pad-centered: var(--pad-edge) 0  var(--pad-edge) max(calc((100vw - var(--max-width)) /2), var(--pad-edge));
+    --sidebar-width: 20rem; // #sidebar (skipLinks and navBar) width
+    --sidebar-pad-centered: max(calc((100vw - var(--max-width)) / 2 + var(--pad-edge)), var(--pad-edge));
 
     --pad-edge: 1.5rem; // page border padding
     --pad-md: 2rem; // medium padding
 
-    --gap-main: 0rem; // main gap size (between regions)
+    --gap-main: 3rem; // main gap size (between regions)
     --gap-inner: 3rem; // inner gap size (between elements within a region)
 
     --content-pad: 0 var(--pad-edge) 0 calc(var(--pad-edge) + var(--sidebar-width) + var(--gap-main));

@@ -16,7 +16,13 @@
     #main {
         max-width: var(--max-width);
         width: 100%;
-        padding: var(--pad-edge);
         margin: 0 auto;
+    }
+
+    // left sidebar
+    :global([data-sidebar-dir="left"]) {
+        #main {
+            padding: var(--pad-edge) var(--pad-edge) var(--pad-edge) calc(var(--pad-edge) + var(--sidebar-width) + var(--gap-main));
+        }
     }
 </style>
