@@ -32,3 +32,10 @@ main, h1 {
         padding: var(--gap-sec) var(--gap-sec) var(--gap-sec) calc(var(--gap-sec) + var(--sidebar-width) + var(--gap-main));
     }
 }
+
+// right sidebar
+:global([data-sidebar-dir="right"]) {
+    main, h1 {
+        padding: var(--gap-sec) calc(var(--gap-sec) + var(--sidebar-width) + var(--gap-main)) var(--gap-sec) var(--gap-sec);
+    }
+}
