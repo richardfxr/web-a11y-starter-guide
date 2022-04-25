@@ -6,7 +6,7 @@
     <h1 slot="pageHeading">TEST</h1>
 
     <main slot="main">
-        <div class="test">
+        <div class="region">
 
         </div>
     </main>
@@ -14,8 +14,7 @@
 
 
 <style lang="scss">
-    .test {
+    .region {
         height: 50vh;
-        background-color: blue;
     }
 </style>
