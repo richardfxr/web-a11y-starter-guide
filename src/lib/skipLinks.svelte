@@ -18,13 +18,5 @@
 </section>
 
 <style lang="scss">
-    #skiplinks {
-        width: 100%;
-
-        .heading {
-            display: flex;
-            flex-flow: row nowrap;
-            gap: var(--gap-xs);
-        }
-    }
+    
 </style>
