@@ -20,11 +20,13 @@ $breakpoint-mobile: 650px;
     --max-width: calc(2 * var(--gap-md) + var(--sidebar-width) + var(--gap-lg) + 84rem); // page max width
     --content-width: calc(100% - ());
     --bradius-md: 0.7rem;
+    --bradius-xs: 0.2rem;
 
     --sidebar-width: 20rem; // #sidebar (skipLinks and navBar) width
     --sidebar-pad-centered: max(calc((100vw - var(--max-width)) / 2 + var(--gap-md)), var(--gap-md));
 
     --pad-md: 2rem; // medium padding
+    --pad-xs: 0.4rem;
 
     --gap-lg: 3rem; // main gap size (between regions)
     --gap-md: calc(var(--gap-lg) / 2); // page border padding
