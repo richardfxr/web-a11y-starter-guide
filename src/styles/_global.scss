@@ -23,6 +23,10 @@ main, h1 {
 }
 
 .region {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: var(--gap-sm);
+
     padding: var(--gap-sm);
     border-radius: var(--bradius-md);
     background-color: var(--clr-50);
@@ -31,6 +35,18 @@ main, h1 {
         font-size: 1.35rem;
         font-weight: 500;
     }
+}
+
+ul.options {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: var(--gap-xs);
+
+    /* remove default styling */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
 }
 
 /* === TYPOGRAPHY ========================= */

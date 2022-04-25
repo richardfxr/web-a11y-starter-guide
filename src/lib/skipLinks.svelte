@@ -1,6 +1,7 @@
 <script>
     // === IMPORTS ================================
     import Hint from '$lib/hint.svelte';
+    import Button from '$lib/button.svelte';
 </script>
 
 <section id="skiplinks" class="region" aria-labelledby="skiplinks__h2">
@@ -9,15 +10,16 @@
         <Hint key="S" />
     </div>
     
-    <ul>
-        <li></li>
+    <ul class="options">
+        <li><Button type="link" size="sm" text="Skip to content" link="#mian" /></li>
+        <li><Button type="link" size="sm" text="Skip to introduction" link="#mian" /></li>
+        <li><Button type="link" size="sm" text="Skip to quick settings" link="#mian" /></li>
     </ul>
 </section>
 
 <style lang="scss">
     #skiplinks {
         width: 100%;
-        height: 25rem;
 
         .heading {
             display: flex;
