@@ -12,7 +12,7 @@
         /* flexbox and centering key */
         display: flex;
         align-items: center;
-        padding: 0 var(--pad-xs);
+        padding: 0 var(--pad-xxs);
 
         /* typography */
         font-family: 'Inter';
