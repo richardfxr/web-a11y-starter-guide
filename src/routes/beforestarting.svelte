@@ -36,7 +36,7 @@
     <SkipLinks slot="sidebar" {links} />
 
     <main slot="main">
-        <div bind:this={quicksettings} class="region" tabindex="-1">
+        <div bind:this={quicksettings} class="region" id="quicksettings" tabindex="-1">
             <div class="heading">
                 <h2>Quick Settings</h2>
                 <Hint key="Q" />
@@ -69,5 +69,48 @@
 
 
 <style lang="scss">
+    .radioGroup {
+        /* grid */
+        display: grid;
+        grid-template-columns: 1fr 1fr;
 
+        position: relative;
+        z-index: 3;
+
+        /* border */
+        border: solid var(--clr-region-border) var(--bwidth-main) ;
+        border-radius: var(--bradius-sm);
+
+        background-color: var(--clr-elem-bg);
+
+        &::after {
+            /* after pseudo class for animated box-shadow */
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+
+            /* box-shadow (::after) is hidden by default. opacity is used to improve performace */
+            box-shadow: var(--box-shadow);
+            
+            opacity: 0;
+            transition: opacity var(--transition-faster) var(--transition-fn1);
+        }
+
+        &:focus-within {
+            border-color: var(--clr-accent);
+
+            &::after {
+                /* show box-shadow */
+                opacity: 1;
+            }
+        }
+
+        label {
+            padding: calc(var(--gap-sm) - var(--bwidth-main));
+        }
+    }
 </style>
