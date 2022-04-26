@@ -9,6 +9,11 @@
    box-sizing: border-box;
 }
 
+:global(*:focus) {
+   /* remove focus outline */
+   outline: none;
+}
+
 :global(body),
 h1,
 h2,
