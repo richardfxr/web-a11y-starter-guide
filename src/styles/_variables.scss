@@ -23,6 +23,7 @@ $breakpoint-mobile: 650px;
     --bradius-md: 0.7rem;
     --bradius-sm: 0.3rem;
     --bradius-xs: 0.2rem;
+    --box-shadow: 0 0.2rem 1.7rem -0.7rem var(--clr-accent); // interactive element box-shadow
 
     --sidebar-width: 20rem; // #sidebar (skipLinks and navBar) width
     --sidebar-pad-centered: max(calc((100vw - var(--max-width)) / 2 + var(--gap-md)), var(--gap-md));
@@ -52,4 +53,6 @@ $breakpoint-mobile: 650px;
     // medium contrast color assignments
     --clr-region-bg: var(--clr-50);
     --clr-region-border: var(--clr-50);
+    --clr-elem-bg: var(--clr-0);
+    --clr-elem-border: var(--clr-0);
 }
