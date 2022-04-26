@@ -4,6 +4,9 @@
     import Button from '$lib/button.svelte';
     import { keyup } from '$lib/keyup.js';
 
+    // === PROPERTIES =============================
+    export let links;
+
     // === VARIABLES ==============================
     let skiplinks;
 
@@ -24,8 +27,9 @@
     
     <ul class="options">
         <li><Button type="link" size="sm" text="Skip to content" link="#mian" /></li>
-        <li><Button type="link" size="sm" text="Skip to introduction" link="#mian" /></li>
-        <li><Button type="link" size="sm" text="Skip to quick settings" link="#mian" /></li>
+        {#each links as link}
+            <li><Button type="link" size="sm" text={link.text} link={link.link} /></li>
+        {/each}
     </ul>
 </section>
 
