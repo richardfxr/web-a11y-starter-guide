@@ -38,6 +38,8 @@
         display: flex;
         flex-flow: column nowrap;
         gap: var(--gap-md);
+
+        // transition: margin var(--transition-normal) var(--transition-fn1);
     }
 
     // left center sidebar
