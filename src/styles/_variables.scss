@@ -17,8 +17,9 @@ $breakpoint-mobile: 650px;
 
 :root {
     /* === CSS VARIABLES ====================== */
-    --max-width: calc(2 * var(--gap-md) + var(--sidebar-width) + var(--gap-lg) + 84rem); // page max width
+    --max-width: calc(2 * var(--gap-md) + var(--sidebar-width) + var(--gap-lg) + 65rem); // page max width
     --content-width: calc(100% - ());
+    --bwidth-main: 0.15rem;
     --bradius-md: 0.7rem;
     --bradius-sm: 0.3rem;
     --bradius-xs: 0.2rem;
@@ -38,10 +39,17 @@ $breakpoint-mobile: 650px;
 
     --content-pad: 0 var(--gap-md) 0 calc(var(--gap-md) + var(--sidebar-width) + var(--gap-lg));
 
+    --transition-faster: 150ms;
+    --transition-fn1: ease-in-out;
+
 
     /* === COLORS ============================= */
     // parse $colors into CSS variables
     @each $name, $value in $light {
         --clr-#{$name}: #{$value};
     }
+
+    // medium contrast color assignments
+    --clr-region-bg: var(--clr-50);
+    --clr-region-border: var(--clr-50);
 }
