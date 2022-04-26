@@ -2,9 +2,21 @@
     // === IMPORTS ================================
     import Hint from '$lib/hint.svelte';
     import Button from '$lib/button.svelte';
+    import { keyup } from '$lib/keyup.js';
+
+    // === VARIABLES ==============================
+    let skiplinks;
+
+    // === EVENT HANDLERS =========================
+    function onFocus() {
+        skiplinks.focus();
+    }
 </script>
 
-<section id="skiplinks" class="region" aria-labelledby="skiplinks__h2">
+
+<svelte:window use:keyup={{s: onFocus}}/>
+
+<section bind:this={skiplinks} id="skiplinks" class="region" tabindex="-1" aria-labelledby="skiplinks__h2">
     <div class="heading">
         <h2 id="skiplinks__h2">Skip Links</h2>
         <Hint key="S" />

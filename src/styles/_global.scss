@@ -30,9 +30,18 @@ main, h1 {
     flex-flow: column nowrap;
     gap: var(--gap-sm);
 
-    padding: var(--gap-sm);
+    /* border */
+    border: solid var(--clr-region-border) var(--bwidth-main) ;
     border-radius: var(--bradius-md);
-    background-color: var(--clr-50);
+
+    padding: calc(var(--gap-sm) - var(--bwidth-main));
+    background-color: var(--clr-region-bg);
+
+    transition: border-color var(--transition-faster) var(--transition-fn1);
+
+    &:focus {
+        border-color: var(--clr-accent);
+    }
 
     .heading {
         /* flexbox */
