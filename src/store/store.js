@@ -33,4 +33,6 @@ sidebarPos.subscribe((value) => {
 
     // set localStorage and change hasCity if value is truthy
     localStorage.sidebarPos = value;
+    // update data-sidebar-pos attr
+    document.documentElement.setAttribute("data-sidebar-pos", value);
 });

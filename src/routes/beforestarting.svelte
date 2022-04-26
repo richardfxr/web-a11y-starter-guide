@@ -21,6 +21,10 @@
     function updateSidebarDir(dir) {
         sidebarDir.set(dir);
     }
+
+    function updateSidebarPos(pos) {
+        sidebarPos.set(pos);
+    }
 </script>
 
 
@@ -46,6 +50,16 @@
                     </label>
                     <label>
                         <input checked={$sidebarDir==="right"} on:change={() => {updateSidebarDir("right")}} type="radio" name="sidebar direction" value="right" /> Right
+                    </label>
+                </div>
+
+                <p id="sidebardir">Sidebar Position:</p>
+                <div class="radioGroup">
+                    <label>
+                        <input checked={$sidebarPos==="center"} on:change={() => {updateSidebarPos("center")}} type="radio" name="sidebar position" value="center" /> Center
+                    </label>
+                    <label>
+                        <input checked={$sidebarPos==="edge"} on:change={() => {updateSidebarPos("edge")}} type="radio" name="sidebar position" value="edge" /> Edge
                     </label>
                 </div>
             </div>
