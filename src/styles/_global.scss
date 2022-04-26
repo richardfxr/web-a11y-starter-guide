@@ -49,7 +49,7 @@ main, h1 {
         right: 0;
         bottom: 0;
         left: 0;
-        z-index: 1;
+        z-index: -1;
 
         /* box-shadow (::after) is hidden by default. opacity is used to improve performace */
         box-shadow: var(--box-shadow);
@@ -58,7 +58,7 @@ main, h1 {
         transition: opacity var(--transition-faster) var(--transition-fn1);
     }
 
-    &:focus {
+    &:focus-visible {
         border-color: var(--clr-accent);
 
         &::after {
@@ -101,14 +101,22 @@ h1 {
 
 // left sidebar
 :global([data-sidebar-dir="left"]) {
-    main, h1 {
-        padding: var(--gap-md) var(--gap-md) var(--gap-md) calc(var(--gap-md) + var(--sidebar-width) + var(--gap-lg));
+    main {
+        padding: var(--gap-md) var(--gap-md) var(--gap-md) calc(var(--gap-md) + var(--sidebar-width) + var(--gap-xl));
+    }
+
+    h1 {
+        padding: var(--pad-xxl) var(--gap-md) calc(var(--pad-xxl) - var(--gap-md)) calc(var(--gap-md) + var(--sidebar-width) + var(--gap-xl));
     }
 }
 
 // right sidebar
 :global([data-sidebar-dir="right"]) {
-    main, h1 {
-        padding: var(--gap-md) calc(var(--gap-md) + var(--sidebar-width) + var(--gap-lg)) var(--gap-md) var(--gap-md);
+    main {
+        padding: var(--gap-md) calc(var(--gap-md) + var(--sidebar-width) + var(--gap-lg)) var(--gap-md) var(--gap-xl);
+    }
+
+    h1 {
+        padding: var(--pad-xxl) calc(var(--gap-md) + var(--sidebar-width) + var(--gap-xl)) var(--gap-md) calc(var(--pad-xxl) - var(--gap-md)) ;
     }
 }
