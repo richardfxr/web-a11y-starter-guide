@@ -17,16 +17,18 @@ $breakpoint-mobile: 650px;
 
 :root {
     /* === CSS VARIABLES ====================== */
-    --max-width: calc(2 * var(--gap-md) + var(--sidebar-width) + var(--gap-xl) + 50rem); // page max width
-    --content-width: calc(100% - ());
+    --max-width: calc(2 * var(--gap-md) + var(--sidebar-width) + var(--gap-xl) + var(--content-width)); // page max width
+    --content-width: 50rem;
     --bwidth-main: 0.15rem;
     --bradius-md: 0.7rem;
     --bradius-sm: 0.3rem;
     --bradius-xs: 0.2rem;
     --box-shadow: 0 0.2rem 1.7rem -0.7rem var(--clr-accent); // interactive element box-shadow
 
-    --sidebar-width: 20rem; // #sidebar (skipLinks and navBar) width
+    --sidebar-width: calc(20rem + var(--gap-md) * 2); // #sidebar (skipLinks and navBar) width
     --sidebar-pad-centered: max(calc((100vw - var(--max-width)) / 2 + var(--gap-md)), var(--gap-md));
+    --sidebar-mar-centered-left: max(calc((100vw - var(--max-width)) / 2), 0px);
+    --sidebar-mar-centered-right: max(calc((100vw - var(--max-width)) / 2 + var(--gap-md) + var(--content-width) + (var(--gap-xl) -var(--gap-md))), calc(var(--gap-md) + var(--content-width) + (var(--gap-xl) -var(--gap-md))));
 
     --pad-xxl: 6rem; // extra extra large padding
     --pad-xl: 4.5rem; // extra large padding
@@ -37,7 +39,7 @@ $breakpoint-mobile: 650px;
     --pad-xxs: 0.4rem; // extra extra small padding
 
     --gap-xl: calc(var(--gap-lg) * 1.5); // sidebar/main gap
-    --gap-lg: 3rem; // main gap size
+    --gap-lg: 3rem; // default set as "medium", overwritten in store.js
     --gap-md: calc(var(--gap-lg) / 2); // page border padding
     --gap-sm: calc(var(--gap-lg) / 3); // region padding
     --gap-xs: calc(var(--gap-lg) / 4); // inner gap size (between elements within a region)
