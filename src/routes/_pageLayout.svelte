@@ -29,7 +29,7 @@
         /* sizing */
         width: var(--sidebar-width);
         height: 100vh;
-        padding: var(--gap-md) 0;
+        padding: var(--gap-md) var(--gap-md);
 
         /* allow scroll if overflown */
         overflow: auto;
@@ -39,14 +39,14 @@
         flex-flow: column nowrap;
         gap: var(--gap-md);
 
-        // transition: margin var(--transition-normal) var(--transition-fn1);
+        transition: margin var(--transition-normal) var(--transition-fn1);
     }
 
     // left center sidebar
     :global([data-sidebar-dir="left"][data-sidebar-pos="center"]) {
         #sidebar {
             /* assign left margin to center sidebar */
-            margin: 0 auto 0 var(--sidebar-pad-centered);
+            margin: 0 0 0 var(--sidebar-mar-centered-left);
         }
     }
 
@@ -54,7 +54,7 @@
     :global([data-sidebar-dir="right"][data-sidebar-pos="center"]) {
         #sidebar {
             /* assign right margin to center sidebar */
-            margin: 0 var(--sidebar-pad-centered) 0 auto;
+            margin: 0 0 0 var(--sidebar-mar-centered-right);
         }
     }
 

@@ -21,7 +21,7 @@ main, h1 {
     width: 100%;
     margin: 0 auto;
 
-    // transition: padding var(--transition-normal) var(--transition-fn1);
+    transition: padding var(--transition-normal) var(--transition-fn1);
 }
 
 .region {
@@ -30,7 +30,7 @@ main, h1 {
     /* flexbox */
     display: flex;
     flex-flow: column nowrap;
-    gap: var(--gap-sm);
+    gap: var(--gap-md);
 
     position: relative;
 
@@ -82,6 +82,13 @@ main, h1 {
     }
 }
 
+.setting {
+    /* flexbox */
+    display: flex;
+    flex-flow: column nowrap;
+    gap: var(--gap-xs);
+}
+
 ul.options {
     display: flex;
     flex-flow: column nowrap;
@@ -98,6 +105,12 @@ ul.options {
 h1 {
     font-size: 2.2rem;
     font-weight: 600;
+    line-height: 1.5em;
+}
+
+.label {
+    font-size: 1.2rem;
+    font-weight: 500;
 }
 
 
