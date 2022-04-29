@@ -4,7 +4,7 @@
     import SkipLinks from '$lib/skipLinks.svelte';
     import Hint from '$lib/hint.svelte';
     import { keyup } from '$lib/keyup.js';
-    import { sidebarDir, sidebarPos } from '../store/store.js';
+    import { sidebarDir, sidebarPos, gap } from '../store/store.js';
 
     // === VARIABLES ==============================
     let links = [
@@ -25,6 +25,10 @@
     function updateSidebarPos(pos) {
         sidebarPos.set(pos);
     }
+
+    function updateGap(gapSize) {
+        gap.set(gapSize);
+    }
 </script>
 
 
@@ -43,8 +47,8 @@
             </div>
 
             <div class="setting">
-                <p id="sidebardir">Sidebar Direction:</p>
-                <div class="radioGroup">
+                <p id="sidebardir" class="label">Sidebar Direction:</p>
+                <div class="radioGroup two">
                     <label>
                         <input checked={$sidebarDir==="left"} on:change={() => {updateSidebarDir("left")}} type="radio" name="sidebar direction" value="left" /> Left
                     </label>
@@ -52,14 +56,31 @@
                         <input checked={$sidebarDir==="right"} on:change={() => {updateSidebarDir("right")}} type="radio" name="sidebar direction" value="right" /> Right
                     </label>
                 </div>
+            </div>
 
-                <p id="sidebardir">Sidebar Position:</p>
-                <div class="radioGroup">
+            <div class="setting">
+                <p id="sidebarpos" class="label">Sidebar Position:</p>
+                <div class="radioGroup two">
                     <label>
                         <input checked={$sidebarPos==="center"} on:change={() => {updateSidebarPos("center")}} type="radio" name="sidebar position" value="center" /> Center
                     </label>
                     <label>
                         <input checked={$sidebarPos==="edge"} on:change={() => {updateSidebarPos("edge")}} type="radio" name="sidebar position" value="edge" /> Edge
+                    </label>
+                </div>
+            </div>
+
+            <div class="setting">
+                <p id="sidebarpos" class="label">Spacing:</p>
+                <div class="radioGroup three">
+                    <label>
+                        <input checked={$gap==="small"} on:change={() => {updateGap("small")}} type="radio" name="gap size" value="small" /> Small
+                    </label>
+                    <label>
+                        <input checked={$gap==="medium"} on:change={() => {updateGap("medium")}} type="radio" name="gap size" value="medium" /> Medium
+                    </label>
+                    <label>
+                        <input checked={$gap==="large"} on:change={() => {updateGap("large")}} type="radio" name="gap size" value="large" /> Large
                     </label>
                 </div>
             </div>
@@ -72,7 +93,6 @@
     .radioGroup {
         /* grid */
         display: grid;
-        grid-template-columns: 1fr 1fr;
 
         position: relative;
         z-index: 3;
@@ -82,6 +102,10 @@
         border-radius: var(--bradius-sm);
 
         background-color: var(--clr-elem-bg);
+
+        transition: color var(--transition-faster) var(--transition-fn1),
+                    background-color var(--transition-faster) var(--transition-fn1),
+                    border-color var(--transition-faster) var(--transition-fn1);
 
         &::after {
             /* after pseudo class for animated box-shadow */
@@ -100,7 +124,7 @@
             transition: opacity var(--transition-faster) var(--transition-fn1);
         }
 
-        &:focus-within {
+        &:hover {
             border-color: var(--clr-accent);
 
             &::after {
@@ -109,8 +133,27 @@
             }
         }
 
+        &:focus-within {
+            border-color: var(--clr-accent);
+            background-color: var(--clr-accent);
+
+            &::after {
+                /* show box-shadow */
+                opacity: 1;
+            }
+        }
+
+        &.two {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        &.three {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
         label {
-            padding: calc(var(--gap-sm) - var(--bwidth-main));
+            padding: calc(var(--pad-xs) - var(--bwidth-main)) calc(var(--pad-sm) - var(--bwidth-main));
+            border-radius: var(--bradius-sm);
         }
     }
 </style>
